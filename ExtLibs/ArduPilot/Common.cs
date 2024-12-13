@@ -142,11 +142,17 @@ union px4_custom_mode {
             }
             else if (firmware == Firmwares.ArduPlane)
             {
-                var flightModes = Utilities.ParameterMetaDataRepository.GetParameterOptionsInt("FLTMODE1",
-                    firmware.ToString());
+                // AIR WORKER PATCH START
+                var flightModes = Utilities.ParameterMetaDataRepository.GetParameterOptionsInt("FLTMODE1", firmware.ToString());
+
+                // Filter the flightModes list to only include "AUTO" and "RTL"  
+                flightModes = flightModes.Where(fm => fm.Value == "AUTO" || fm.Value == "RTL").ToList();
+
+                // Add "INITIALISING" mode if needed  
                 flightModes.Add(new KeyValuePair<int, string>(16, "INITIALISING"));
 
                 return flightModes;
+                // AIR WORKER PATCH END
             }
             else if (firmware == Firmwares.Ateryx)
             {
