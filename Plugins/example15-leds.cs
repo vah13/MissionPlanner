@@ -47,7 +47,9 @@ namespace leds
             var rootbut = new ToolStripMenuItem("LED");
             //rootbut.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            col.Add(rootbut);
+            // AIR WORKER PATCH START
+            // col.Add(rootbut);
+            // AIR WORKER PATCH END
 
             var but = new ToolStripMenuItem("Red");
             but.Click += (s, e) => {

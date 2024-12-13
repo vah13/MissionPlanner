@@ -32,8 +32,9 @@ namespace MapIconDesc
             var but = new ToolStripMenuItem("Change icon Description");
             but.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            col.Add(but);
-
+            // AIR WORKER PATCH START
+            // col.Add(but);
+            // AIR WORKER PATCH END
             return true;
         }
 

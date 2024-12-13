@@ -30,7 +30,9 @@ namespace MissionPlanner.plugins
             var rootbut = new ToolStripMenuItem("Forward between links");
             rootbut.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            col.Add(rootbut);
+            // AIR WORKER PATCH START
+            // col.Add(rootbut);
+            // AIR WORKER PATCH END
 
             return true;
         }

@@ -55,6 +55,14 @@ namespace MissionPlanner
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.status1 = new MissionPlanner.Controls.Status();
+            
+            // AIR WORKER PATCH START
+            this.MenuInitConfig.Enabled = false;
+            this.MenuConfigTune.Enabled = false;
+            this.MenuSimulation.Enabled = false;
+            this.MenuHelp.Enabled = false;
+            // AIR WORKER PATCH END
+
             this.MainMenu.SuspendLayout();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();

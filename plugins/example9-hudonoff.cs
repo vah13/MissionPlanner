@@ -43,7 +43,8 @@ namespace hudonoff
 
         public override bool Loaded()
         {
-            var rootbut = new ToolStripMenuItem("HUD Items");
+            // AIR WORKER PATCH START
+            /*var rootbut = new ToolStripMenuItem("HUD Items");
             ToolStripItemCollection col = Host.FDMenuHud.Items;
             col.Add(rootbut);
 
@@ -85,8 +86,8 @@ namespace hudonoff
                     FlightData.myhud.GetType().GetProperty(item.Key).SetValue(FlightData.myhud, but.Checked);
                 }
                 rootbut.DropDownItems.Add(but);
-            }
-
+            }*/
+            // AIR WORKER PATCH END
             return true;
         }
 
