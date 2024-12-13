@@ -34,9 +34,11 @@ namespace tracemp
             var but = new ToolStripMenuItem("tracemp");
             but.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            
+
             // uncomment to enable
-            col.Add(but);
+            // @vah_13 START
+            // col.Add(but);
+            // @vah_13 END
 
             return true;
         }

@@ -46,7 +46,8 @@ namespace CameraControl
 
         public override bool Loaded()
         {
-            var rootbut = new ToolStripMenuItem("Herelink Video");
+            // @vah_13 START
+            /*var rootbut = new ToolStripMenuItem("Herelink Video");
             //rootbut.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuHud.Items;
             col.Add(rootbut);
@@ -113,8 +114,8 @@ namespace CameraControl
 
                 mav.parent.doCommand(mav.sysid, mav.compid, MAV_CMD_VIDEO_STOP_CAPTURE, 0, 0, 0, 0, 0, 0, 0);
             };
-            rootbut.DropDownItems.Add(but);
-
+            rootbut.DropDownItems.Add(but);*/
+            // @vah_13 END
             return true;
         }
 

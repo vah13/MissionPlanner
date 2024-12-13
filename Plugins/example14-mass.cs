@@ -46,7 +46,9 @@ namespace mass
             var rootbut = new ToolStripMenuItem("Mass");
             //rootbut.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            col.Add(rootbut);
+            // @vah_13 START
+            // col.Add(rootbut);
+            // @vah_13 END
 
             var but = new ToolStripMenuItem("Arm");
             but.Click += (s, e) => {

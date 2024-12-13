@@ -292,6 +292,16 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.Zoomlevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStatusTab)).BeginInit();
             this.SuspendLayout();
+
+
+
+            // @vah_13 START
+            this.BUT_joystick.Enabled = false;
+            this.BUT_RAWSensor.Enabled = false;
+            this.BUT_SendMSG.Enabled = false;
+            // @vah_13 END
+
+
             // 
             // MainH
             // 
@@ -442,33 +452,40 @@ namespace MissionPlanner.GCSViews
             this.hud1.vibeclick += new System.EventHandler(this.hud1_vibeclick);
             this.hud1.prearmclick += new System.EventHandler(this.hud1_prearmclick);
             this.hud1.Load += new System.EventHandler(this.hud1_Load);
-            this.hud1.DoubleClick += new System.EventHandler(this.hud1_DoubleClick);
+            // this.hud1.DoubleClick += new System.EventHandler(this.hud1_DoubleClick);
             this.hud1.Resize += new System.EventHandler(this.hud1_Resize);
             // 
             // contextMenuStripHud
             // 
             this.contextMenuStripHud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.videoToolStripMenuItem,
-            this.setAspectRatioToolStripMenuItem,
+            // @vah_13 START
+            // this.videoToolStripMenuItem,
+            /*this.setAspectRatioToolStripMenuItem,
             this.userItemsToolStripMenuItem,
             this.russianHudToolStripMenuItem,
             this.swapWithMapToolStripMenuItem,
             this.groundColorToolStripMenuItem,
             this.setBatteryCellCountToolStripMenuItem,
-            this.showIconsToolStripMenuItem});
+            this.showIconsToolStripMenuItem*/
+            // @vah_13 END
+            });
             this.contextMenuStripHud.Name = "contextMenuStrip2";
             resources.ApplyResources(this.contextMenuStripHud, "contextMenuStripHud");
             // 
             // videoToolStripMenuItem
             // 
             this.videoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recordHudToAVIToolStripMenuItem,
+            // @vah_13 START
+            /*this.recordHudToAVIToolStripMenuItem,
             this.stopRecordToolStripMenuItem,
             this.setMJPEGSourceToolStripMenuItem,
             this.startCameraToolStripMenuItem,
             this.setGStreamerSourceToolStripMenuItem,
             this.hereLinkVideoToolStripMenuItem,
-            this.gStreamerStopToolStripMenuItem});
+            this.gStreamerStopToolStripMenuItem
+            */
+            // @vah_13 END
+            });
             this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
             resources.ApplyResources(this.videoToolStripMenuItem, "videoToolStripMenuItem");
             // 
@@ -569,13 +586,16 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.Controls.Add(this.tabPagemessages);
             this.tabControlactions.Controls.Add(this.tabActionsSimple);
             this.tabControlactions.Controls.Add(this.tabPagePreFlight);
-            this.tabControlactions.Controls.Add(this.tabGauges);
-            this.tabControlactions.Controls.Add(this.tabTransponder);
             this.tabControlactions.Controls.Add(this.tabStatus);
             this.tabControlactions.Controls.Add(this.tabServo);
-            this.tabControlactions.Controls.Add(this.tabAuxFunction);
-            this.tabControlactions.Controls.Add(this.tabScripts);
-            this.tabControlactions.Controls.Add(this.tabPayload);
+            // @vah_13 START
+            // this.tabControlactions.Controls.Add(this.tabGauges);
+            // this.tabControlactions.Controls.Add(this.tabTransponder);
+            // this.tabControlactions.Controls.Add(this.tabScripts);
+            // this.tabControlactions.Controls.Add(this.tabPayload);
+            // this.tabControlactions.Controls.Add(this.tabAuxFunction);
+            // @vah_13 END
+
             this.tabControlactions.Controls.Add(this.tabTLogs);
             this.tabControlactions.Controls.Add(this.tablogbrowse);
             resources.ApplyResources(this.tabControlactions, "tabControlactions");
@@ -586,11 +606,13 @@ namespace MissionPlanner.GCSViews
             // 
             // contextMenuStripactionstab
             // 
-            this.contextMenuStripactionstab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            // @vah_13 START
+/*            this.contextMenuStripactionstab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customizeToolStripMenuItem,
             this.multiLineToolStripMenuItem});
             this.contextMenuStripactionstab.Name = "contextMenuStripactionstab";
-            resources.ApplyResources(this.contextMenuStripactionstab, "contextMenuStripactionstab");
+            resources.ApplyResources(this.contextMenuStripactionstab, "contextMenuStripactionstab");*/
+            // @vah_13 END
             // 
             // customizeToolStripMenuItem
             // 
@@ -638,15 +660,17 @@ namespace MissionPlanner.GCSViews
             // 
             // contextMenuStripQuickView
             // 
-            this.contextMenuStripQuickView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            // @vah_13 START
+            /*this.contextMenuStripQuickView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setViewCountToolStripMenuItem,
             this.undockToolStripMenuItem});
             this.contextMenuStripQuickView.Name = "contextMenuStripQuickView";
-            resources.ApplyResources(this.contextMenuStripQuickView, "contextMenuStripQuickView");
+            resources.ApplyResources(this.contextMenuStripQuickView, "contextMenuStripQuickView");*/
             // 
             // setViewCountToolStripMenuItem
             // 
-            this.setViewCountToolStripMenuItem.Name = "setViewCountToolStripMenuItem";
+            
+/*          this.setViewCountToolStripMenuItem.Name = "setViewCountToolStripMenuItem";
             resources.ApplyResources(this.setViewCountToolStripMenuItem, "setViewCountToolStripMenuItem");
             this.setViewCountToolStripMenuItem.Click += new System.EventHandler(this.setViewCountToolStripMenuItem_Click);
             // 
@@ -654,7 +678,8 @@ namespace MissionPlanner.GCSViews
             // 
             this.undockToolStripMenuItem.Name = "undockToolStripMenuItem";
             resources.ApplyResources(this.undockToolStripMenuItem, "undockToolStripMenuItem");
-            this.undockToolStripMenuItem.Click += new System.EventHandler(this.undockDockToolStripMenuItem_Click);
+            this.undockToolStripMenuItem.Click += new System.EventHandler(this.undockDockToolStripMenuItem_Click);*/
+            // @vah_13 END
             // 
             // bindingSourceQuickTab
             // 
@@ -2505,42 +2530,63 @@ namespace MissionPlanner.GCSViews
             this.loadFileToolStripMenuItem,
             this.poiatcoordsToolStripMenuItem});
             this.addPoiToolStripMenuItem.Name = "addPoiToolStripMenuItem";
+            // @vah_13 START
+            this.addPoiToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.addPoiToolStripMenuItem, "addPoiToolStripMenuItem");
             this.addPoiToolStripMenuItem.Click += new System.EventHandler(this.addPoiToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            // @vah_13 START
+            this.deleteToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // saveFileToolStripMenuItem
             // 
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
+            // @vah_13 START
+            this.saveFileToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.saveFileToolStripMenuItem, "saveFileToolStripMenuItem");
             this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
             // 
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
+            // @vah_13 START
+            this.loadFileToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.loadFileToolStripMenuItem, "loadFileToolStripMenuItem");
             this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
             // 
             // poiatcoordsToolStripMenuItem
             // 
             this.poiatcoordsToolStripMenuItem.Name = "poiatcoordsToolStripMenuItem";
+            // @vah_13 START
+            this.poiatcoordsToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.poiatcoordsToolStripMenuItem, "poiatcoordsToolStripMenuItem");
             this.poiatcoordsToolStripMenuItem.Click += new System.EventHandler(this.poiatcoordsToolStripMenuItem_Click);
             // 
             // pointCameraHereToolStripMenuItem
             // 
             this.pointCameraHereToolStripMenuItem.Name = "pointCameraHereToolStripMenuItem";
+            // @vah_13 START
+            this.pointCameraHereToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.pointCameraHereToolStripMenuItem, "pointCameraHereToolStripMenuItem");
             this.pointCameraHereToolStripMenuItem.Click += new System.EventHandler(this.pointCameraHereToolStripMenuItem_Click);
             // 
             // PointCameraCoordsToolStripMenuItem1
             // 
             this.PointCameraCoordsToolStripMenuItem1.Name = "PointCameraCoordsToolStripMenuItem1";
+            // @vah_13 START
+            this.PointCameraCoordsToolStripMenuItem1.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.PointCameraCoordsToolStripMenuItem1, "PointCameraCoordsToolStripMenuItem1");
             this.PointCameraCoordsToolStripMenuItem1.Click += new System.EventHandler(this.PointCameraCoordsToolStripMenuItem1_Click);
             // 
@@ -2553,6 +2599,9 @@ namespace MissionPlanner.GCSViews
             // flightPlannerToolStripMenuItem
             // 
             this.flightPlannerToolStripMenuItem.Name = "flightPlannerToolStripMenuItem";
+            // @vah_13 START
+            this.flightPlannerToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.flightPlannerToolStripMenuItem, "flightPlannerToolStripMenuItem");
             this.flightPlannerToolStripMenuItem.Click += new System.EventHandler(this.flightPlannerToolStripMenuItem_Click);
             // 
@@ -2579,6 +2628,9 @@ namespace MissionPlanner.GCSViews
             // takeOffToolStripMenuItem
             // 
             this.takeOffToolStripMenuItem.Name = "takeOffToolStripMenuItem";
+            // @vah_13 START
+            this.takeOffToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.takeOffToolStripMenuItem, "takeOffToolStripMenuItem");
             this.takeOffToolStripMenuItem.Click += new System.EventHandler(this.takeOffToolStripMenuItem_Click);
             // 
@@ -2586,6 +2638,9 @@ namespace MissionPlanner.GCSViews
             // 
             this.onOffCameraOverlapToolStripMenuItem.CheckOnClick = true;
             this.onOffCameraOverlapToolStripMenuItem.Name = "onOffCameraOverlapToolStripMenuItem";
+            // @vah_13 START
+            this.onOffCameraOverlapToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.onOffCameraOverlapToolStripMenuItem, "onOffCameraOverlapToolStripMenuItem");
             this.onOffCameraOverlapToolStripMenuItem.Click += new System.EventHandler(this.onOffCameraOverlapToolStripMenuItem_Click);
             // 
@@ -2813,6 +2868,9 @@ namespace MissionPlanner.GCSViews
             // jumpToTagToolStripMenuItem
             // 
             this.jumpToTagToolStripMenuItem.Name = "jumpToTagToolStripMenuItem";
+            // @vah_13 START
+            this.jumpToTagToolStripMenuItem.Enabled = false;
+            // @vah_13 END
             resources.ApplyResources(this.jumpToTagToolStripMenuItem, "jumpToTagToolStripMenuItem");
             this.jumpToTagToolStripMenuItem.Click += new System.EventHandler(this.jumpToTagToolStripMenuItem_Click);
             // 

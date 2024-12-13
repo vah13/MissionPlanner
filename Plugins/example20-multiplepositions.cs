@@ -44,8 +44,9 @@ namespace MissionPlanner.plugins
             var rootbut = new ToolStripMenuItem("Setup other positions");
             rootbut.Click += but_Click;
             ToolStripItemCollection col = Host.FDMenuMap.Items;
-            col.Add(rootbut);
-
+            // @vah_13 START
+            // col.Add(rootbut);
+            // @vah_13 END
             overlay = new GMapOverlay("positions");
             FlightData.instance.gMapControl1.Overlays.Add(overlay);
 

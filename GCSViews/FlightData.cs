@@ -32,6 +32,7 @@ using ZedGraph;
 using LogAnalyzer = MissionPlanner.Utilities.LogAnalyzer;
 using TableLayoutPanelCellPosition = System.Windows.Forms.TableLayoutPanelCellPosition;
 using UnauthorizedAccessException = System.UnauthorizedAccessException;
+using static MAVLink;
 
 // written by michael oborne
 
@@ -338,7 +339,16 @@ namespace MissionPlanner.GCSViews
                 }
             }
 
+            // @vah_13 START
+
             CMB_action.DataSource = Enum.GetNames(typeof(actions));
+
+            var exclusions = new List<string> { "System_Time", "Battery_Reset", "ADSB_Out_Ident", "Scripting_cmd_stop_and_restart", "Scripting_cmd_stop", "HighLatency_Enable", "HighLatency_Disable", "Toggle_Safety_Switch" };
+            var actionNames = Enum.GetNames(typeof(actions))
+                                  .Where(name => !exclusions.Contains(name))
+                                  .ToList();
+            CMB_action.DataSource = actionNames;
+            // @vah_13 END
 
             CMB_modes.DataSource = ArduPilot.Common.getModesList(MainV2.comPort.MAV.cs.firmware);
             CMB_modes.ValueMember = "Key";
@@ -2666,6 +2676,9 @@ namespace MissionPlanner.GCSViews
                 MainV2.comPort.MAV.cs.firmware.ToString());
             var item2 = ParameterMetaDataRepository.GetParameterOptionsInt("MNT_DEFLT_MODE",
                 MainV2.comPort.MAV.cs.firmware.ToString());
+            // @vah_13 START
+            item2.Clear();
+            // @vah_13 END
             if (item1.Count > 0)
                 CMB_mountmode.DataSource = item1;
 
